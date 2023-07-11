@@ -7,8 +7,10 @@
 #-y picks yes for every prompt during installation
 #default html webpage of Nginx if found in /var/www/html/index.nginx-debian.html
 
-apt-get -y update
-apt-get -y install nginx
-ufw allow 'Nginx HTTP'
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
-service nginx start
+#testing nginx configuration
+sudo nginx -t
+sudo service nginx restart
