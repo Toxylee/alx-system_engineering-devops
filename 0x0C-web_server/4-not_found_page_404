@@ -1,10 +1,25 @@
+#!/usr/bin/env bash
+# configuring Nginx server to have a custom 404 page that contains the string Ceci n'est pas une page.
+
+# Package update and Nginx installation
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
+
+# Index page creation
 echo "Hello World" | sudo tee /var/www/html/index.html
+
+# Creation of 303 redirection error
 new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/ permanent;"
 sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-available/default
+
+# Creation of 404 custom page error
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 new_text="listen 80 default_server;\n\terror_page 404 \/custom_404.html;"
 sudo sed -i "s/listen 80 default_server;/$new_text/" /etc/nginx/sites-available/default
+
+# Restart nginx server
 sudo service nginx restart
+
+# Nginx server configuration test
+sudo nginx -t
