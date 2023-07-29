@@ -1,4 +1,4 @@
-#!/usr/vin/env bash
+#!/usr/bin/env bash
 # Usage: ./file_name <domain> <subdomain>
 # Displays information about subdomains
 
