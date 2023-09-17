@@ -4,13 +4,11 @@ A Python script using this REST API(user_url & todos_url), for a given employee 
 information about his/her TODO list progress.
 """
 
-import json
 import requests
 from sys import argv
 
 """Do not execute when imported"""
 if __name__ == "__main__":
-
 
     emp_id = argv[1]
     user_url = 'https://jsonplaceholder.typicode.com/users'

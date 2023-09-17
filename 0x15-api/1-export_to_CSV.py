@@ -4,12 +4,12 @@ Python script using REST API for a given employee ID, returns
 information about his/her TODO list progress.
 Extends Python script to export data in the CSV format.
 """
-import json
+
 import csv
 import requests
 from sys import argv
 
-"""To execute as main file only not imported"""
+"""To execute as main file only"""
 if __name__ == "__main__":
 
     emp_id = argv[1]
