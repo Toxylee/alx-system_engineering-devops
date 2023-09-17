@@ -4,10 +4,9 @@ A Python script using this REST API(user_url & todos_url), for a given employee 
 information about his/her TODO list progress.
 """
 
-import requests
 from sys import argv
+import requests
 
-"""Do not execute when imported"""
 if __name__ == "__main__":
 
     emp_id = argv[1]
