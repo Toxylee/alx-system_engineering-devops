@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-A Python script using this REST API(user_url & todos_url), for a given employee ID, returns
+Python script using REST API(user_url & todos_url), 
+for a given employee ID, returns
 information about his/her TODO list progress.
 """
 
-from sys import argv
+import sys.argv
 import requests
 
 if __name__ == "__main__":
